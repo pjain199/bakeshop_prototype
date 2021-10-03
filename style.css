@@ -4,12 +4,17 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  .header{
+      margin-top:0px;
+      height:70px;
+  }
   /* changes position of navigation bar*/
   .header > .nav {
     display: inline-block;
     width: 100%;
-    padding: 20px;
     text-align: left;
+    z-index: auto;
   }
   
   /* changes position of cart */
@@ -18,15 +23,43 @@
     height: 50px;
     display: block;
     position: absolute;
-    margin-left: 450px;
+    margin-left: 850px;
     margin-top: -20px;
   }
-  
-  .logo{
-      text-align: center;
-      margin-left: 20px;
-      font-family: "Reenie Beanie";
+
+  .home{
+    display: inline-block;
+    position: relative;
+    top:-40px;
+    width: 50%;
+    height:5%;
+    text-align: center;
+    margin-top: 0px;
+    margin-left:350px;
+    z-index: 300;
   }
+
+  .home > a{
+    color: #AA0E47;
+    font-family: 'Reenie Beanie';
+    text-decoration: none;
+    font-size: 150%;
+    line-height: .1px;
+
+
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000000;
+    margin: 1em 0;
+    padding: 0;
+    z-index:500;
+}
+
+  
 
   /******************************************* */
   /* NOW let us work on the dropdown menus      */
@@ -34,89 +67,57 @@
   
   
   
-  .header > .nav > .mainmenu > li {
+  .header > .nav > li {
     display: inline-block;
-    padding: 16px;
+    padding: 15px;
     position: relative;
   }
   /* changes properties of entire navigation bar */
-  .header > .nav > .mainmenu {
+  .header > .nav {
     display: inline-block;
     padding: 50px 20px;
     width: 100%;
     background-color: #FFFFFF;
     position: absolute;
-    top:10px;
+    top:-30px;
     right: 0px;
     z-index: 200;
   }
 
   
   /* highlight top-menu item when mouse is over it */
-  .header > .nav > .mainmenu > li:hover {
-    /* background-color: #7c6f74; */
+  .header > .nav > li:hover {
     font-weight: 700;
   }
-  
-  /* show sub-menu when mouse is over its parent top-menu item  */
-  .header > .nav > .mainmenu > li:hover > .sub-menu {
-    display: block;
-  
-    /* move sub-menu to proper location. top/left is relative to its top-menu origin  */
-    /* TODO position absolute with top/left 48px/0 */
-    position: absolute;
-    top: 48px;
-    left: 0px;
-  
-    /* TODO background color rgba 0,0,0,0.7   */
-    background-color: rgba(0,0,0,0.7);
+
+  .header > .home > a:hover {
+      font-weight: 700;
   }
   
-  
-  .header > .nav > .mainmenu > li > .sub-menu > li {
-    padding: 16px;
-    list-style: none;
-  }
-  
-  /* highlight sub-menu items when mouse over */
-  .header > .nav > .mainmenu > li > .sub-menu > li:hover {
-    background-color: #AA0E47;
-  }
+ 
   
   /* set font and text style of main and sub-menu links */
-  .header > .nav > .mainmenu > li > a {
+  .header > .nav > li > a {
     color: #AA0E47;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif, 'regular';
+    font-weight: lighter;
     text-decoration: none;
-    font-size: 120%
+    font-size: 110%
   }
 
-  #logo{
-    font-family: 'Reenie Beanie';
-    margin-left: 200px;
-    color:#A04057;
 
-  }
-  
-  .header > .nav > .mainmenu > li > .sub-menu > li > a {
-    color: #A04057;
-    font-size: 80%;
-    font-family:Montserrat;
-    text-decoration: none;
-    white-space: nowrap;
-  }
   
   /* add code for samller screen */
   @media (max-width: 700px) {
     /* IMPORTANT move dropdown menu back as part of the navigation   */
-    .header > .nav > .mainmenu {
+    .header > .nav {
       position: static;
       width: 100%;
       padding: 0px;
-      background-color: grey;
+      background-color: white;
     }
   
-    .header > .nav > .mainmenu > li {
+    .header > .nav > li {
       /* set top-menu item (link and sub-menu) vertically */
       display: block;
       padding: 0px;
@@ -125,12 +126,9 @@
     color: grey;
     }
   
-    .header > .nav > .mainmenu > li:hover {
-      background-color: grey;
-    }
   
     /* set top-menu link vertically */
-    .header > .nav > .mainmenu > li > a {
+    .header > .nav > li > a {
       display: block;
       padding: 16px;
       font-family: sans-serif;
@@ -139,49 +137,8 @@
     }
   
     /* highlight top-menu link when mouse over */
-    .header > .nav > .mainmenu > li:hover > a {
-      /* TODO text color white and background color red     */
-      background-color: red;
-      color: white;
-    }
-  
-    /* hide sub-menu */
-    .header > .nav > .mainmenu > li > .sub-menu {
-      /* TODO display none */
-      display: none;
-    }
-      
-    /* show sub-menu when mouse is over its parent top-menu item  */
-    .header > .nav > .main-menu > li:hover > .sub-menu {
-      display: block;
-      width: 90%;
-  
-      /* IMPORTANT move submenu back as part of header   */
-      position: static;
-      overflow: hidden;
-      background-color: white;
-    }
-  
-    .header > .nav > .main-menu > li > .sub-menu > li {
-      padding: 16px;
-    }
-  
-    .header > .nav > .main-menu > li > .sub-menu > li > a {
-  color: black;
-      font-size: 85%;
-      font-famiy: sans-serif;
-      txt-decoration: none;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-  
-    /* highlight sub-menu item when mouse over */
-    .header > .nav > .main-menu > li > .sub-menu > li:hover {
-      background-color: red;
-    }
-    .header > .nav > .main-menu > li > .sub-menu > li:hover > a {
-      color: white;
-    }  
+    
+ 
   }
   
   /*------ Slideshow ------*/
@@ -195,8 +152,10 @@
   .slideshow {
     display: block;
     width: 100%;
-    height: 715px;
+    height: 650px;
     position: relative;
+    top: -100px;
+    margin-bottom:-100px;
     overflow: hidden;
   }
   
@@ -204,7 +163,7 @@
     display: none;
     width: 100%;
     height: 100%;
-    padding: 142px 0px 0px 0px;
+    padding: 100px 0px 0px 0px;
     overflow: hidden;
   }   
   
@@ -279,73 +238,17 @@
   }
   
   
-  
-  .welcome {
-    text-align: center;
-    font-family: Copperplate, Papyrus, fantasy;
-    font-size: 30px;
-    background-color: black;
-    color: #AA0E47;
-    padding: 25px 0px 15px 0px;
-    
-  }
-  .message{
-    font-family: Optima;
-    font-size: 20px;
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding: 10px 0px 0px 0px;
-  }
-  .reviews{
-     text-align: center;
-    font-family: Copperplate, Papyrus, fantasy;
-    font-size: 30px;
-    background-color: black;
-    color: #AA0E47;
-    padding: 50px 0px 15px 0px;
-  }
-  
-  
-  
-  
-  
-  .slideshow-container {
-    position: relative;
-    background: black;
-  }
-  
-  .mySlides {
-    padding: 10px 0px 0px 0px;
-    text-align: center;
-    font-family: Optima;
-    color: white
-  }
-  
-  .dot-container {
-    text-align: center;
-    padding: 5px 0px 20px 0px;
-    background: black;
-  }
-  
-  .dot {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0px 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .active, .dot:hover {
-    background-color: white;
-  }
-  
-  .author {color: gray;
-    font-style: italic;
-    font-family: Optima;
-    padding: 10px 0px 0px 0px;
-  } 
-  
+    button {
+        width: 200px;
+        height: 70px;
+        border-radius: 30px;
+        background-color: #A04057;
+        font-family:'Montserrat', sans-serif, 'semi-bold';
+        color:#FFFFFF;
+        font-size: 25px;
+        text-align: center;
+        cursor: pointer; 
+        margin-left: 600px;
+        margin-top: -100px;
+      }
+

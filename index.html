@@ -9,8 +9,7 @@
 
     <body>
         <div class = "header">
-            <div class = "nav">
-              <ul class = "mainmenu">
+            <ul class = "nav">
                 <li>
                   <a href=" ">About</a>
                 </li>
@@ -23,25 +22,53 @@
                 <li>
                   <a href=" ">Products</a>
                 </li>
-                <li id = "logo">
-                  <a href=" ">Bun Bun Bake Shop</a>
-                </li>
-               
-
+                
+            
                 <li id = "cart">
                   <a href=" ">
-                    <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/cart.png" alt="logo">
+                    <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/cart.png" alt="cartpic">
                   </a>
                 </li>
               </ul>
+
             </div>
-            
+
+
+
+            <div class="home">
+                <a href=" ">Bun Bun <br/> </br> Bake Shop</a>
             </div>
-          <div class ="slideshow">
-            <div class = "slide1">
+
+            <hr/>
+ 
+          <!-- <div class ="slideshow">
+            <div class = "myslides">
               <img src="slideshow 1.png">
+            </div> 
+            <div class = "myslides">
+                <img src="slide2.png">
+            </div>
+          </div> -->
+          
+          <div class="slideshow">
+  
+            <!-- slide one, we add radio button and label in front of each slide to hide and show slide one at a time   -->
+            <input type="radio" checked id="s1" name="slide" />
+            <label for="s1"></label>
+            <div class="slide">
+              <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/slideshow 1.png" alt="slide">
+            </div>
+          
+            <!-- slide #2 -->
+            <input type="radio" id="s2" name="slide" />
+            <label for="s2"></label>
+            <div class="slide">
+              <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/slide2.png" alt="slide 2" />
             </div>
           </div>
+          
+          <button class="buttonShopFlavors">Shop Flavors</button>
+
           
     </body>
 
