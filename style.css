@@ -27,36 +27,37 @@
     margin-top: -20px;
   }
 
-  .home{
-    display: inline-block;
-    position: relative;
-    top:-40px;
-    width: 50%;
-    height:5%;
-    text-align: center;
-    margin-top: 0px;
-    margin-left:350px;
-    z-index: 300;
-  }
-
+  /* Bun Bun Bake Shop home logo */
   .home > a{
-    color: #AA0E47;
-    font-family: 'Reenie Beanie';
-    text-decoration: none;
-    font-size: 150%;
-    line-height: .1px;
 
+    position: absolute;
+    width: 219px;
+    height: 66px;
+    left: 610px;
+    top: 24px;
+
+    font-family: 'Reenie Beanie';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 15px;
+    text-align: center;
+    z-index: 300;
+
+    color: #A04057;
+    text-decoration: none;
 
   }
+
 
   hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #000000;
-    margin: 1em 0;
-    padding: 0;
-    z-index:500;
+    position: absolute;
+    width: 1440px;
+    height: 0px;
+    left: 0px;
+    top: 80px;
+    border: 1px solid #000000;
+    z-index: 200;
 }
 
   
@@ -87,12 +88,32 @@
   
   /* highlight top-menu item when mouse is over it */
   .header > .nav > li:hover {
-    font-weight: 700;
+    font-weight: 800;
   }
 
-  .header > .home > a:hover {
-      font-weight: 700;
+  /* .header > .nav > li > #cart:hover{
+      background-image: "/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg";
+  } */
+
+  .header > .cart {
+    position: absolute;
+    width: 79px;
+    height: 54px;
+    left: 1319px;
+    top: 15px;
+    background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/cartpic.svg");
+    z-index:200;
   }
+
+  .header > .cart:hover {
+    width: 76px;
+    background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg");
+  }
+
+  /* Do I want the home logo to bold on hover? */
+  /* .home > a:hover {
+      font-weight: 700;
+  } */
   
  
   
@@ -151,20 +172,36 @@
   
   .slideshow {
     display: block;
-    width: 100%;
+    /* width: 100%;
     height: 650px;
     position: relative;
     top: -100px;
-    margin-bottom:-100px;
+    margin-bottom:-100px; */
     overflow: hidden;
+    position: absolute;
+    width: 1440px;
+    height: 611px;
+    left: 0px;
+    top: 80px; 
+    border: 1px solid #000000;
+    box-sizing: border-box;
   }
   
   .slide {
-    display: none;
+    /* display: none;
     width: 100%;
     height: 100%;
     padding: 100px 0px 0px 0px;
+    overflow: hidden; */
+    display:none;
+    position: absolute;
+    width: 1440px;
+    height: 611px;
+    left: 0px;
+    top: 0px; 
     overflow: hidden;
+    border: 1px solid #000000;
+    box-sizing: border-box;
   }   
   
   .slideshow > input {
@@ -238,7 +275,7 @@
   }
   
   
-    button {
+    /* button {
         width: 200px;
         height: 70px;
         border-radius: 30px;
@@ -250,5 +287,12 @@
         cursor: pointer; 
         margin-left: 600px;
         margin-top: -100px;
-      }
+      } */
 
+.shopFlavorsButton{
+position: absolute;
+width: 300px;
+height: 92px;
+left: 563px;
+top: 590px;
+}
