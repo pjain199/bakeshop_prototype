@@ -61,11 +61,6 @@
 }
 
   
-
-  /******************************************* */
-  /* NOW let us work on the dropdown menus      */
-  /******************************************* */
-  
   
   
   .header > .nav > li {
@@ -96,7 +91,8 @@
   } */
 
   .header > .cart {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     width: 79px;
     height: 54px;
     left: 1319px;
@@ -130,7 +126,7 @@
   
   /* add code for samller screen */
   @media (max-width: 700px) {
-    /* IMPORTANT move dropdown menu back as part of the navigation   */
+    /* move dropdown menu back as part of the navigation   */
     .header > .nav {
       position: static;
       width: 100%;
@@ -139,7 +135,6 @@
     }
   
     .header > .nav > li {
-      /* set top-menu item (link and sub-menu) vertically */
       display: block;
       padding: 0px;
   border: 1px solid white;
@@ -148,7 +143,6 @@
     }
   
   
-    /* set top-menu link vertically */
     .header > .nav > li > a {
       display: block;
       padding: 16px;
@@ -156,9 +150,7 @@
       text-decoration: none;
        text-transform: uppercase;
     }
-  
-    /* highlight top-menu link when mouse over */
-    
+      
  
   }
   
@@ -205,28 +197,24 @@
   }   
   
   .slideshow > input {
-  /* TODO hide radio button, instead we will use label to check/uncheck it, using display: none; */
   display: none;
   }
   
   .slideshow > input:checked + label + .slide {
-  /* TODO only show slide if the radio button in front of it is checked, using :checked selector and display: block; */
+  /* only show slide if the radio button in front of it is checked */
     display: block;
   }
   
   .slideshow > label {
-  /* TODO use display: inline-block so labels will be side by side and share the row   */
+  /* labels will be side by side and share the row   */
   display: inline-block;
-  /* TODO set width and height to be 8px so it looks like a small square button   */
     width: 8px;
     height: 8px;
     
-  /* TODO set label position: absolute and use bottom: 140px so they will be placed on top of slides at the bottom part of slideshow  */
   position: absolute;
   bottom: 45px;
-  /* TODO set z-index: 100, so it will be on top of the slides instead of behind them   */
     z-index: 100;
-  /* make button lightgrey even it has no text content   */
+/* button color */
     background-color: lightgrey;
   }
   
@@ -240,11 +228,9 @@
     left: 60px;
   }
   .slideshow > label:nth-of-type(2) {
-  /* TODO set a differnt left value */
   left:40px
   }
   
-  /* set video and img inside of slideshow to be 100% high of its parent and hide anything outside of its border */
   .slide video, .slide img {
     height: 100%;
     width: 100%;
@@ -254,20 +240,15 @@
   
   /* make the link as a square box */
   .slide > a {
-  /* TODO set display: block;   */
   display: block;
-  /* TODO make it 104px wide and high   */
   width: 104px;
   height: 104px;
-  /* TODO make 14px padding   */
   padding: 14px;
-  /* TODO add 5px solid white border   */
    border: 5px solid white;
-  /* TODO use absolute position to place it 220px from bottom and 60px from left   */
     position: absolute;
     bottom: 220px;
     left: 60px;
-  /* set font and text style   */
+
     color: white;
     font-family: sans-serif;
     font-size: 120%;
@@ -291,10 +272,15 @@
 
 .shopFlavorsButton{
 position: absolute;
-width: 300px;
-height: 92px;
-left: 563px;
+width: 250px;
+height: 80px;
+left: 590px;
 top: 590px;
+background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/shop_flavors_button.svg");
+}
+
+.shopFlavorsButton:hover{
+    background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/shop_flavors_button_hover.svg");
 }
 
 
