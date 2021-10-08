@@ -1,274 +1,276 @@
 /* reset default */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
 
-  .header{
-      margin-top:0px;
-      height:70px;
-  }
-  /* changes position of navigation bar*/
-  .header > .nav {
-    display: inline-block;
-    width: 100%;
-    text-align: left;
-    z-index: auto;
-  }
-  
-  /* changes position of cart */
-  .header img{
-    width: 70px;
-    height: 50px;
-    display: block;
-    position: absolute;
-    margin-left: 850px;
-    margin-top: -20px;
-  }
+.header{
+    margin-top:0px;
+    height:70px;
+}
+/* changes position of navigation bar*/
+/* .header > .nav {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  z-index: auto;
+} */
 
-  /* Bun Bun Bake Shop home logo */
-  .home > a{
-
-    position: absolute;
-    width: 219px;
-    height: 66px;
-    left: 610px;
-    top: 24px;
-
-    font-family: 'Reenie Beanie';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 15px;
-    text-align: center;
-    z-index: 300;
-
-    color: #A04057;
-    text-decoration: none;
-
-  }
-
-
-  hr {
-    position: absolute;
-    width: 1440px;
-    height: 0px;
-    left: 0px;
-    top: 80px;
-    border: 1px solid #000000;
-    z-index: 200;
+/* changes position of cart */
+.header img{
+  width: 70px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  margin-left: 850px;
+  margin-top: -20px;
 }
 
-  
-  
-  
-  .header > .nav > li {
-    display: inline-block;
-    padding: 15px;
-    position: relative;
-  }
-  /* changes properties of entire navigation bar */
-  .header > .nav {
-    display: inline-block;
-    padding: 50px 20px;
-    width: 100%;
-    background-color: #FFFFFF;
-    position: absolute;
-    top:-30px;
-    right: 0px;
-    z-index: 200;
-  }
+/* Bun Bun Bake Shop home logo */
+.home > a{
 
-  
-  /* highlight top-menu item when mouse is over it */
-  .header > .nav > li:hover {
-    font-weight: 800;
-  }
-
-  /* .header > .nav > li > #cart:hover{
-      background-image: "/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg";
-  } */
-
-  .header > .cart {
-    position: relative;
-    display: inline-block;
-    width: 79px;
-    height: 54px;
-    left: 1319px;
-    top: 15px;
-    background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/cartpic.svg");
-    z-index:200;
-  }
-
-  .header > .cart:hover {
-    width: 76px;
-    background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg");
-  }
-
-  /* Do I want the home logo to bold on hover? */
-  /* .home > a:hover {
-      font-weight: 700;
-  } */
-  
- 
-  
-  /* set font and text style of main and sub-menu links */
-  .header > .nav > li > a {
-    color: #AA0E47;
-    font-family: 'Montserrat', sans-serif, 'regular';
-    font-weight: lighter;
-    text-decoration: none;
-    font-size: 110%
-  }
-
-
-  
-  /* add code for samller screen */
-  @media (max-width: 700px) {
-    /* move dropdown menu back as part of the navigation   */
-    .header > .nav {
-      position: static;
-      width: 100%;
-      padding: 0px;
-      background-color: white;
-    }
-  
-    .header > .nav > li {
-      display: block;
-      padding: 0px;
-  border: 1px solid white;
-  border-width: 1px 0px 0px 0px
-    color: grey;
-    }
-  
-  
-    .header > .nav > li > a {
-      display: block;
-      padding: 16px;
-      font-family: sans-serif;
-      text-decoration: none;
-       text-transform: uppercase;
-    }
-      
- 
-  }
-  
-  /*------ Slideshow ------*/
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .slideshow {
-    display: block;
-    /* width: 100%;
-    height: 650px;
-    position: relative;
-    top: -100px;
-    margin-bottom:-100px; */
-    overflow: hidden;
-    position: absolute;
-    width: 1440px;
-    height: 611px;
-    left: 0px;
-    top: 80px; 
-    border: 1px solid #000000;
-    box-sizing: border-box;
-  }
-  
-  .slide {
-    /* display: none;
-    width: 100%;
-    height: 100%;
-    padding: 100px 0px 0px 0px;
-    overflow: hidden; */
-    display:none;
-    position: absolute;
-    width: 1440px;
-    height: 611px;
-    left: 0px;
-    top: 0px; 
-    overflow: hidden;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-  }   
-  
-  .slideshow > input {
-  display: none;
-  }
-  
-  .slideshow > input:checked + label + .slide {
-  /* only show slide if the radio button in front of it is checked */
-    display: block;
-  }
-  
-  .slideshow > label {
-  /* labels will be side by side and share the row   */
-  display: inline-block;
-    width: 8px;
-    height: 8px;
-    
   position: absolute;
-  bottom: 45px;
-    z-index: 100;
-/* button color */
-    background-color: lightgrey;
-  }
-  
-  /* highlight checked button */
-  .slideshow > input:checked + label {
+  width: 219px;
+  height: 66px;
+  left: 610px;
+  top: 24px;
+
+  font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 15px;
+  text-align: center;
+  z-index: 300;
+
+  color: #A04057;
+  text-decoration: none;
+
+}
+
+
+hr {
+  position: absolute;
+  width: 1440px;
+  height: 0px;
+  left: 0px;
+  top: 80px;
+  border: 1px solid #000000;
+  z-index: 200;
+}
+
+
+
+
+.header > .nav > li {
+  display: inline-block;
+  padding: 15px;
+  margin-top:40px;
+  /* position: relative; */
+  top:30px;
+}
+/* changes properties of entire navigation bar */
+.header > .nav {
+  display: inline-block;
+  /* padding: 50px 20px; */
+  width: 100%;
+  background-color: #FFFFFF;
+  position: absolute;
+  top:-26px;
+  right: 0px;
+  z-index: 200;
+}
+
+
+/* highlight top-menu item when mouse is over it */
+.header > .nav > li:hover {
+  font-weight: 800;
+}
+
+/* .header > .nav > li > #cart:hover{
+    background-image: "/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg";
+} */
+
+.header > .cart {
+  position: relative;
+  display: inline-block;
+  width: 79px;
+  height: 54px;
+  left: 1319px;
+  top: 15px;
+  background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/cartpic.svg");
+  z-index:200;
+}
+
+.header > .cart:hover {
+  width: 76px;
+  background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg");
+}
+
+/* Do I want the home logo to bold on hover? */
+/* .home > a:hover {
+    font-weight: 700;
+} */
+
+
+
+/* set font and text style of main and sub-menu links */
+.header > .nav > li > a {
+  color: #AA0E47;
+  font-family: 'Montserrat', sans-serif, 'regular';
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 110%
+}
+
+
+
+/* add code for samller screen */
+@media (max-width: 700px) {
+  /* move dropdown menu back as part of the navigation   */
+  .header > .nav {
+    position: static;
+    width: 100%;
+    padding: 0px;
     background-color: white;
   }
-  
-  /* set differnt left: value to make labels position horizontally */
-  .slideshow > label:nth-of-type(1) {
-    left: 60px;
-  }
-  .slideshow > label:nth-of-type(2) {
-  left:40px
-  }
-  
-  .slide video, .slide img {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    
-  }
-  
-  /* make the link as a square box */
-  .slide > a {
-  display: block;
-  width: 104px;
-  height: 104px;
-  padding: 14px;
-   border: 5px solid white;
-    position: absolute;
-    bottom: 220px;
-    left: 60px;
 
-    color: white;
-    font-family: sans-serif;
-    font-size: 120%;
-    text-decoration: none;
+  .header > .nav > li {
+    display: block;
+    padding: 0px;
+border: 1px solid white;
+border-width: 1px 0px 0px 0px
+  color: grey;
   }
+
+
+  .header > .nav > li > a {
+    display: block;
+    padding: 16px;
+    font-family: sans-serif;
+    text-decoration: none;
+     text-transform: uppercase;
+  }
+    
+
+}
+
+/*------ Slideshow ------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slideshow {
+  display: block;
+  /* width: 100%;
+  height: 650px;
+  position: relative;
+  top: -100px;
+  margin-bottom:-100px; */
+  overflow: hidden;
+  position: absolute;
+  width: 1440px;
+  height: 611px;
+  left: 0px;
+  top: 80px; 
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.slide {
+  /* display: none;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0px 0px 0px;
+  overflow: hidden; */
+  display:none;
+  position: absolute;
+  width: 1440px;
+  height: 611px;
+  left: 0px;
+  top: 0px; 
+  overflow: hidden;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}   
+
+.slideshow > input {
+display: none;
+}
+
+.slideshow > input:checked + label + .slide {
+/* only show slide if the radio button in front of it is checked */
+  display: block;
+}
+
+.slideshow > label {
+/* labels will be side by side and share the row   */
+display: inline-block;
+  width: 8px;
+  height: 8px;
   
+position: absolute;
+bottom: 45px;
+  z-index: 100;
+/* button color */
+  background-color: lightgrey;
+}
+
+/* highlight checked button */
+.slideshow > input:checked + label {
+  background-color: white;
+}
+
+/* set differnt left: value to make labels position horizontally */
+.slideshow > label:nth-of-type(1) {
+  left: 60px;
+}
+.slideshow > label:nth-of-type(2) {
+left:40px
+}
+
+.slide video, .slide img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   
-    /* button {
-        width: 200px;
-        height: 70px;
-        border-radius: 30px;
-        background-color: #A04057;
-        font-family:'Montserrat', sans-serif, 'semi-bold';
-        color:#FFFFFF;
-        font-size: 25px;
-        text-align: center;
-        cursor: pointer; 
-        margin-left: 600px;
-        margin-top: -100px;
-      } */
+}
+
+/* make the link as a square box */
+.slide > a {
+display: block;
+width: 104px;
+height: 104px;
+padding: 14px;
+ border: 5px solid white;
+  position: absolute;
+  bottom: 220px;
+  left: 60px;
+
+  color: white;
+  font-family: sans-serif;
+  font-size: 120%;
+  text-decoration: none;
+}
+
+
+  /* button {
+      width: 200px;
+      height: 70px;
+      border-radius: 30px;
+      background-color: #A04057;
+      font-family:'Montserrat', sans-serif, 'semi-bold';
+      color:#FFFFFF;
+      font-size: 25px;
+      text-align: center;
+      cursor: pointer; 
+      margin-left: 600px;
+      margin-top: -100px;
+    } */
 
 .shopFlavorsButton{
 position: absolute;
@@ -280,7 +282,7 @@ background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source
 }
 
 .shopFlavorsButton:hover{
-    background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/shop_flavors_button_hover.svg");
+  background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/shop_flavors_button_hover.svg");
 }
 
 
@@ -289,70 +291,70 @@ background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source
 /* Product Page  */
 
 h1{
-    position: absolute;
-    width: 188px;
-    height: 70px;
-    left: 49px;
-    top: 120px;
+  position: absolute;
+  width: 188px;
+  height: 70px;
+  left: 49px;
+  top: 120px;
 
-    font-family: Reenie Beanie;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 70px;
-    line-height: 70px;
-    /* identical to box height */
+  font-family: Reenie Beanie;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 70px;
+  /* identical to box height */
 
-    text-align: center;
+  text-align: center;
 
-    color: #A04057;
+  color: #A04057;
 }
 
 .flex-container {
-    margin: 40px auto 0 auto;
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-    
-  }
+  margin: 40px auto 0 auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
   
-  .box, .box2 {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 40px auto 0 auto;
-    color: white;
-    background-color: white;
-    width: 400px;
-    margin: 30px;
-    height: 240px;
-    text-align: center;
-    line-height: 140px;
-    font-size: 20px;
-  }
+  
+}
 
-  .box2{
-      margin-top: 70px;
-  }
+.box, .box2 {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 40px auto 0 auto;
+  color: white;
+  background-color: white;
+  width: 400px;
+  margin: 30px;
+  height: 240px;
+  text-align: center;
+  line-height: 140px;
+  font-size: 20px;
+}
 
-
-
-  .flavor{
-      text-align: center; 
-      margin-top: -40px;;
-  }
+.box2{
+    margin-top: 70px;
+}
 
 
-  .flavor > a{
-    font-family: Reenie Beanie;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 40px;
-    text-align: center;
-    text-decoration: none;
 
-    color: #FB8B8B;
-  }
+.flavor{
+    text-align: center; 
+    margin-top: -40px;;
+}
+
+
+.flavor > a{
+  font-family: Reenie Beanie;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+
+  color: #FB8B8B;
+}
