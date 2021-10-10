@@ -1,30 +1,46 @@
-/* reset default */
+/* reset default never use*/
 /* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 } */
 
-.header{
+.site-header{
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
     margin-top:0px;
-    height:70px;
-}
+    height:80px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    /* makes header sticky so it doesn't move up */
+    position: sticky; 
+    top: 0px;
+    z-index:5000;
+} 
+
+
 /* changes position of navigation bar*/
-/* .header > .nav {
-  display: inline-block;
-  width: 100%;
-  text-align: left;
-  z-index: auto;
-} */
+
+
+/* for modal stuffs */
+body{
+  font-family:'Montserrat', sans-serif, 'regular';
+  font-size: 17px;
+  line-height: 1.6;
+}
 
 /* changes position of cart */
-.header img{
+.site-header > .cart{
   width: 70px;
   height: 50px;
-  display: block;
+  display:flex;
+  top:15px;
+  /* display: block;
   position: absolute;
   margin-left: 850px;
-  margin-top: -20px;
+  margin-top: -20px; */
 }
 
 /* Bun Bun Bake Shop home logo */
@@ -63,28 +79,26 @@ hr {
 
 
 
-.header > .nav > li {
+.site-header > .nav > a {
   display: inline-block;
   padding: 15px;
-  margin-top:40px;
-  /* position: relative; */
+  margin-top:10px;
   top:30px;
 }
 /* changes properties of entire navigation bar */
-.header > .nav {
+/* .header > .nav {
   display: inline-block;
-  /* padding: 50px 20px; */
   width: 100%;
   background-color: #FFFFFF;
   position: absolute;
   top:-26px;
   right: 0px;
   z-index: 200;
-}
+} */
 
 
 /* highlight top-menu item when mouse is over it */
-.header > .nav > li:hover {
+.site-header  > .nav > a:hover {
   font-weight: 800;
 }
 
@@ -92,18 +106,19 @@ hr {
     background-image: "/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg";
 } */
 
-.header > .cart {
-  position: relative;
-  display: inline-block;
+.site-header > .cart {
+  /* position: relative;
+  display: inline-block; */
+  left:500px;
   width: 79px;
   height: 54px;
-  left: 1319px;
-  top: 15px;
+  margin-top: 10px;
+  margin-right: 20px;
   background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/cartpic.svg");
   z-index:200;
 }
 
-.header > .cart:hover {
+.site-header > .cart:hover {
   width: 76px;
   background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg");
 }
@@ -116,7 +131,7 @@ hr {
 
 
 /* set font and text style of main and sub-menu links */
-.header > .nav > li > a {
+.site-header  > .nav > a {
   color: #AA0E47;
   font-family: 'Montserrat', sans-serif, 'regular';
   font-weight: lighter;
@@ -129,7 +144,7 @@ hr {
 /* add code for samller screen */
 @media (max-width: 700px) {
   /* move dropdown menu back as part of the navigation   */
-  .header > .nav {
+  .site-header > .nav {
     position: static;
     width: 100%;
     padding: 0px;
@@ -140,7 +155,7 @@ hr {
     display: block;
     padding: 0px;
 border: 1px solid white;
-border-width: 1px 0px 0px 0px
+border-width: 1px 0px 0px 0px;
   color: grey;
   }
 
@@ -152,6 +167,8 @@ border-width: 1px 0px 0px 0px
     text-decoration: none;
      text-transform: uppercase;
   }
+
+
     
 
 }
@@ -174,7 +191,7 @@ border-width: 1px 0px 0px 0px
   overflow: hidden;
   position: absolute;
   width: 1440px;
-  height: 611px;
+  height: 710px;
   left: 0px;
   top: 80px; 
   border: 1px solid #000000;
@@ -190,7 +207,7 @@ border-width: 1px 0px 0px 0px
   display:none;
   position: absolute;
   width: 1440px;
-  height: 611px;
+  height: 710px;
   left: 0px;
   top: 0px; 
   overflow: hidden;
@@ -237,6 +254,7 @@ left:40px
   height: 100%;
   width: 100%;
   overflow: hidden;
+  opacity: 90%;
   
 }
 
@@ -258,19 +276,6 @@ padding: 14px;
 }
 
 
-  /* button {
-      width: 200px;
-      height: 70px;
-      border-radius: 30px;
-      background-color: #A04057;
-      font-family:'Montserrat', sans-serif, 'semi-bold';
-      color:#FFFFFF;
-      font-size: 25px;
-      text-align: center;
-      cursor: pointer; 
-      margin-left: 600px;
-      margin-top: -100px;
-    } */
 
 .shopFlavorsButton{
 position: absolute;
@@ -291,11 +296,11 @@ background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source
 /* Product Page  */
 
 h1{
-  position: absolute;
+  position: relative;
   width: 188px;
   height: 70px;
   left: 49px;
-  top: 120px;
+  top: 50px;
 
   font-family: Reenie Beanie;
   font-style: normal;
@@ -357,4 +362,137 @@ h1{
   text-decoration: none;
 
   color: #FB8B8B;
+}
+
+
+
+
+
+
+/* modal css gray background */
+.modal{
+  display:none; 
+  position:absolute;
+  z-index:1;
+  left:0;
+  bottom:0;
+  height:90%;
+  width:100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+  background-color: #FFFFFF;
+  margin: 50%;
+  margin-top: 0px;
+  margin-right:0px;
+  padding:20px;
+  height:100%;
+  /* credit to w2schools */
+  max-height: calc(vh - 300px); 
+
+  overflow-y: auto;
+
+}
+
+.closeBtn{
+  color: #ccc;
+  float: right;
+  font-size:40px;
+}
+
+.closeBtn:hover, .closeBtn:focus{
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.modal-content > h1{
+  margin-top:-40px;
+  margin-left:-50px;
+}
+
+.ingredients{
+  margin-top:-55px;
+  margin-left:200px;
+  line-height: 12px;
+  font-family:'Montserrat', sans-serif, 'regular';
+
+}
+
+#originalPic{
+  margin-left:200px;
+  margin-top:60px;
+}
+
+
+/* dropdown */
+.selectbox-container {
+  left: 0px;
+  top: 0px;
+  width: 300px;
+  text-align: right;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 40px 10px;
+}
+.selectbox-container label {
+  float: left;
+  line-height: 40px;
+  height: 40px;
+  margin: 1px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif, 'regular';
+}
+
+.customize-details {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif, 'regular';
+  width: 200px;
+  padding: 8px 20px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 2px solid #FF8282;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.number-of-buns{
+  margin-top:60px;
+}
+
+.subtotal{
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 37px;
+color:black;
+margin-left:10px;
+margin-bottom:-60px;
+}
+
+.add-to-cart button{
+  margin-left:400px;
+  background-color: #A04057;
+  width: 242px;
+  height: 74.21px;
+  font-family: 'Montserrat', sans-serif, 'regular';
+font-style:normal;
+color:#FFFFFF;
+font-weight: 400;
+font-size: 26px;
+line-height: 32px;
+text-align: center;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
+  
+}
+
+.add-to-cart button:hover{
+  background-color: #FB8B8B ;
 }

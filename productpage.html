@@ -1,57 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bun Bun Bake Shop</title>
         <link href="style.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="style.css">
         <link href='https://fonts.googleapis.com/css?family=Reenie Beanie' rel='stylesheet'>   
+        <script src="site.js"></script>
     </head>
 
     <body>
-        <div class = "header">
-            <ul class = "nav">
-                <li>
-                  <a href=" ">About</a>
-                </li>
-                <li>
-                  <a href=" ">Contact</a>
-                </li>
-                <li>
-                  <a href=" ">Location</a>
-                </li>
-                <li>
-                  <a href=" ">Products</a>
-                </li>
-                
+        <header class="site-header">
+                <nav class="nav">
+                    <a href=" ">About</a>
+                    <a href=" ">Contact</a>
+                    <a href=" ">Location</a>
+                    <a href=" ">Products</a>
+                </nav>
+                <div class="home">
+                    <a href="index.html">Bun Bun <br/> </br> Bake Shop</a>
+                </div>
+                <div class = "cart"></div>
+
+                <hr>
+        </header>
+    
+
+
+
             
-                <!-- <li id = "cart">
-                  <a href=" ">
-                    <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/cart.png" alt="cartpic">
-                  </a>
-                </li> -->
-              </ul>
-              <div class = "cart"></div>
-
-            </div>
-
-
-            <div class="home">
-                <a href="file:///Users/priyajain/Documents/MHCI/bakeshop_prototype/index.html">Bun Bun <br/> </br> Bake Shop</a>
-            </div>
-
-            <hr/>
-
-
-
-            <h1>Products</h1>
  
-
+<div class="content">
+    <h1>Products</h1>
             <div class = "flex-container">
                 <div class = "container">
                     <div class ="box">
-                        <a href=" ">
-                        <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/bun.svg">
-                    </a>
+                        
+                        <img id="originalFlavor" src="source/bun.svg" alt="pic" onclick="openModal()">
+                        
                     </div>
                     <div class = "flavor">
                         <a href=" ">Original</a>
@@ -61,7 +48,7 @@
                 <div class = "container">
                     <div class ="box">
                         <a href=" ">
-                        <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/bun.svg">
+                        <img src="source/bun.svg" alt="pic">
                     </a>
                     </div>
                     <div class = "flavor">
@@ -72,7 +59,7 @@
                 <div class = "container">
                     <div class ="box">
                         <a href=" ">
-                        <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/bun.svg">
+                        <img src="source/bun.svg" alt="pic">
                     </a>
                     </div>
                     <div class = "flavor">
@@ -84,7 +71,7 @@
                 <div class = "container">
                     <div class ="box2">
                         <a href=" ">
-                        <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/bun.svg">
+                        <img src="source/bun.svg" alt="pic">
                     </a>
                     </div>
                     <div class = "flavor">
@@ -95,7 +82,7 @@
                 <div class = "container">
                     <div class ="box2">
                         <a href=" ">
-                        <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/bun.svg">
+                        <img src="source/bun.svg" alt="pic">
                     </a>
                     </div>
                     <div class = "flavor">
@@ -106,7 +93,7 @@
                 <div class = "container">
                     <div class ="box2">
                         <a href=" ">
-                        <img src="/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/bun.svg">
+                        <img src="source/bun.svg" alt="pic">
                     </a>
                     </div>
                     <div class = "flavor">
@@ -114,13 +101,63 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
 
 
+
+            <!-- modal Product Details Screen -->
+
+            <div id="productDetailsModal" class="modal">
+                <div class="modal-content">
+                    <span class="closeBtn" onclick="closeModal()">&times;</span>
+                    <h1>Original</h1>
+                    <div class = "productImage">
+                    <img src="source/bun.svg" id= "originalPic" alt="original bun pic">
+                    <p class = "ingredients">
+                        Ingredients: Flour, milk, sugar, heavy cream, <br></br> cinnamon, maple syrup, baking soda, salt
+                    </p>
+                </div>
+
+                <!-- glaze drop down -->
+                        <div class="selectbox-container">
+                            <div class = "glazing">
+                            <label for="glaze">Glaze</label>
+                            <select id="glaze" class="customize-details" name="glaze">
+                                <option value="none">None</option>
+                                <option value="sugarMilk">Sugar-milk</option>
+                                <option value="vanillaMilk">Vanilla-milk</option>
+                                <option value="doubleChocolate">Double-chocolate</option>
+                            </select>
+                        </div>
+
+                        <div class="number-of-buns">
+
+                            <label for="amount">Amount</label>
+                            <select id="buns" class="customize-details" name="buns">
+                                <option value="1 roll">1 roll</option>
+                                <option value="3 rolls">3 rolls</option>
+                                <option value="6 rolls">6 rolls</option>
+                                <option value="12 rolls">12 rolls</option>
+                            </select>
+                        </div>
+                        </div>
+
+                        <p class="subtotal">Subtotal:$15.00</p>
+
+                        <!-- add to cart button -->
+                        <div class="add-to-cart">
+                            <button type="submit">Add To Cart</button>
+                        </div>
+
+                    
+
+
+                    </div>
 
             </div>
-        
 
-
+            
 
 
           

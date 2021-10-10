@@ -24,3 +24,22 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+// var modal = document.getElementById('productDetailsModal');
+var originalPic = document.getElementById('originalFlavor');
+var closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+originalPic.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+
+function openModal(){
+  var modal = document.getElementById('productDetailsModal');
+  modal.style.display='block';
+
+}
+
+function closeModal(){
+  var modal = document.getElementById('productDetailsModal');
+  modal.style.display='none';
+
+}
