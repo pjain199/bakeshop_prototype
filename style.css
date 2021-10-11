@@ -297,7 +297,7 @@ background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source
 
 h1{
   position: relative;
-  width: 188px;
+  width: 280px;
   height: 70px;
   left: 49px;
   top: 50px;
@@ -496,3 +496,33 @@ border-radius: 40px;
 .add-to-cart button:hover{
   background-color: #FB8B8B ;
 }
+
+
+/* about page */
+.our-story{
+  margin-top:-55px;
+  margin-left:200px;
+  line-height: 24px;
+  font-family:'Montserrat', sans-serif, 'regular';
+  font-size: 20px;
+  letter-spacing: 0.015em;
+  margin-top: 100px;
+  margin-left:90px;
+
+}
+
+#person1, #person2, #person3{
+  width:200px;
+  height:300px;
+}
+
+.name{
+  font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 30px;
+  color:#FB8B8B;
+  text-align: center;
+  margin-top:90px;
+}
+
