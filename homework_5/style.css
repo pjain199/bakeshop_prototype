@@ -114,13 +114,13 @@ hr {
   height: 54px;
   margin-top: 10px;
   margin-right: 20px;
-  background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/cartpic.svg");
+  background-image: url("source/cartpic.svg");
   z-index:200;
 }
 
 .site-header > .cart:hover {
   width: 76px;
-  background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg");
+  background-image: url("source/carticonhover.svg");
 }
 
 /* Do I want the home logo to bold on hover? */
