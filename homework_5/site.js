@@ -31,6 +31,7 @@ var closeBtn = document.getElementsByClassName('closeBtn')[0];
 
 originalPic.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
+cart.addEventListener('click', openCart);
 
 function openModal(){
   var modal = document.getElementById('productDetailsModal');
@@ -43,3 +44,19 @@ function closeModal(){
   modal.style.display='none';
 
 }
+
+function openCart(){
+  var modal = document.getElementById('cartModal');
+  modal.style.display='block';
+}
+
+function bunSelection(name, glaze, amount) {
+  this.name = name;
+  this.glaze = glaze;
+  this.amount = amount;
+}
+
+var course1 = new Course("CS1500", gradingareas, 85);
+
+ 
+

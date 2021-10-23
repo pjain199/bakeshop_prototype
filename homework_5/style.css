@@ -283,11 +283,11 @@ width: 250px;
 height: 80px;
 left: 590px;
 top: 590px;
-background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/shop_flavors_button.svg");
+background-image: url("source/shop_flavors_button.svg");
 }
 
 .shopFlavorsButton:hover{
-  background-image: url("/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/shop_flavors_button_hover.svg");
+  background-image: url("source/shop_flavors_button_hover.svg");
 }
 
 
@@ -371,7 +371,7 @@ h1{
 
 /* modal css gray background */
 .modal{
-  display:none; 
+  /* display:none;  */
   position:absolute;
   z-index:1;
   left:0;
@@ -464,7 +464,7 @@ h1{
 }
 
 .subtotal{
-  font-family: 'Montserrat';
+font-family: 'Montserrat';
 font-style: normal;
 font-weight: normal;
 font-size: 30px;
@@ -497,6 +497,15 @@ border-radius: 40px;
   background-color: #FB8B8B ;
 }
 
+.productImage > img{
+  width:300px;
+  height: 300px;
+}
+
+#productPic{
+  margin-left:30px;
+  margin-top:60px;
+}
 
 /* about page */
 .our-story{
@@ -525,4 +534,3 @@ border-radius: 40px;
   text-align: center;
   margin-top:90px;
 }
-
