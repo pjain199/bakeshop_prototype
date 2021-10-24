@@ -365,13 +365,22 @@ h1{
 }
 
 
-
+.counter-display{
+   position:absolute;
+    left:1390px;
+    width: 25px;
+    height: 30px;
+    margin-top: 6px;
+    margin-right: 30px;
+    background-color: red;
+    z-index:300;
+  }
 
 
 
 /* modal css gray background */
 .modal{
-  /* display:none;  */
+  display:none; 
   position:absolute;
   z-index:1;
   left:0;

@@ -7,7 +7,7 @@
         <link href="style.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="style.css">
         <link href='https://fonts.googleapis.com/css?family=Reenie Beanie' rel='stylesheet'>   
-        <script src="site.js"></script>
+        <!-- <script src="site.js"></script> -->
     </head>
 
     <body>
@@ -16,12 +16,15 @@
                     <a href="about.html">About</a>
                     <a href=" ">Contact</a>
                     <a href=" ">Location</a>
-                    <a href=" ">Products</a>
+                    <a href="productpage.html">Products</a>
                 </nav>
                 <div class="home">
                     <a href="index.html">Bun Bun <br/> </br> Bake Shop</a>
                 </div>
                 <div class = "cart"></div>
+                <span class="counter-display">(..)</span>
+
+
 
                 <hr>
         </header>
@@ -31,8 +34,18 @@
         </div> -->
 
         <h1 class = "myCart">My Cart</h1>
-
         
+        Details: <span id = "result"></span>
+        <script>
+            for(let i=0; i<10; i++){
+            console.log(document.getElementById("result").innerHTML = localStorage.getItem("glazeValue") + localStorage.getItem("amountValue"));
+            }
+        </script>
+    
+
+
+
+
 
         
 
@@ -43,5 +56,8 @@
 
 
     </body>
+
+    <script src="site.js"></script>
+
 
 </html>

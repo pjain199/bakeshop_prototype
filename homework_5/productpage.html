@@ -21,7 +21,8 @@
                 <div class="home">
                     <a href="index.html">Bun Bun <br/> </br> Bake Shop</a>
                 </div>
-                <div class = "cart"></div>
+                <div class = "cart" onclick: openCart()></div>
+                <span class="counter-display">(0)</span>
 
                 <hr>
         </header>
@@ -41,29 +42,25 @@
                         
                     </div>
                     <div class = "flavor">
-                        <a href=" ">Original</a>
+                        <a id= "original" href=" ">Original</a>
                     </div>
                 </div>
 
                 <div class = "container">
                     <div class ="box">
-                        <a href=" ">
-                        <img src="source/bun.svg" alt="pic">
-                    </a>
+                        <img id = "blackberryFlavor" src="source/bun.svg" alt="pic" onclick="openModal()">
                     </div>
                     <div class = "flavor">
-                        <a href=" ">Blackberry</a>
+                        <a id="blackberry" href=" ">Blackberry</a>
                     </div>
                 </div>
 
                 <div class = "container">
                     <div class ="box">
-                        <a href=" ">
-                        <img src="source/bun.svg" alt="pic">
-                    </a>
+                        <img src="source/bun.svg" alt="pic" onclick="openModal()">
                     </div>
                     <div class = "flavor">
-                        <a href=" ">Walnut</a>
+                        <a id = "walnut" href=" ">Walnut</a>
                     </div>
                 </div>
 
@@ -123,15 +120,32 @@
                         <div class="selectbox-container">
                             <div class = "glazing">
                             <label for="glaze">Glaze</label>
+                            <form action="cart.html">
                             <select id="glaze" class="customize-details" name="glaze">
                                 <option value="none">None</option>
                                 <option value="sugarMilk">Sugar-milk</option>
                                 <option value="vanillaMilk">Vanilla-milk</option>
                                 <option value="doubleChocolate">Double-chocolate</option>
                             </select>
+                            <div class="number-of-buns">
+
+                                <label for="amount">Amount</label>
+                                <select id="buns" class="customize-details" name="buns">
+                                    <option value="1 roll">1 roll</option>
+                                    <option value="3 rolls">3 rolls</option>
+                                    <option value="6 rolls">6 rolls</option>
+                                    <option value="12 rolls">12 rolls</option>
+                                </select>
+                            </div>
+
+                            <div class="add-to-cart">
+                                <button class = "addCart" type="submit" value="Submit" onclick="passValue()">Add To Cart</button>
+    
+                            </div>
+                        </form>
                         </div>
 
-                        <div class="number-of-buns">
+                        <!-- <div class="number-of-buns">
 
                             <label for="amount">Amount</label>
                             <select id="buns" class="customize-details" name="buns">
@@ -140,15 +154,16 @@
                                 <option value="6 rolls">6 rolls</option>
                                 <option value="12 rolls">12 rolls</option>
                             </select>
-                        </div>
+                        </div> -->
                         </div>
 
                         <p class="subtotal">Subtotal:$15.00</p>
 
                         <!-- add to cart button -->
-                        <div class="add-to-cart">
-                            <button type="submit">Add To Cart</button>
-                        </div>
+                        <!-- <div class="add-to-cart">
+                            <button type="submit" value="Submit" onclick="passValue()">Add To Cart</button>
+
+                        </div> -->
 
                     
 
@@ -193,5 +208,6 @@
           
     </body>
 
+    <script src="site.js"></script>
 
 </html>
