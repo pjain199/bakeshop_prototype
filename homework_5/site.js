@@ -158,17 +158,21 @@ function closeModal(){
 
 }
 
-// var cartInfo = [];
 
-// const cartItem = {
-//   name = document.getElementById('productName').innerHTML,
-//   glaze = document.getElementById("glaze").value,
-//   amount = document.getElementById("buns").value
-// };
+var cartInfo = [];
+const cartItem = {
+  // flavor = document.getElementById('productName').innerHTML,
+  // glaze = document.getElementById("glaze").value,
+  // amount = document.getElementById("buns").value
+};
 
-// const item = Object.create(cartItem);
-// cartInfo.push(item);
-// console.log(cartInfo);
+// console.log(cartItem);
+
+function addToCart(){
+const item = Object.create(cartItem);
+cartInfo.push(item);
+console.log(cartInfo);
+}
 
 let counterDisplay = document.querySelector('.counter-display');
 let counterAdd = document.querySelector('addCart');

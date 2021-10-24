@@ -34,13 +34,34 @@
         </div> -->
 
         <h1 class = "myCart">My Cart</h1>
+        <div class = item>
+            <img class = "cartImg" src="source/bun.svg" alt="product picture in cart">
+            <h3 class = 'itemHeading'>Original</h3>
+            <p class = 'details'>Topping: Vanilla Glaze <br> </br>Amount: 3 buns <br> </br> Price: $15.00 </p>
+            <p class = 'remove'>Remove</p>
+        </div>
+
+
+            <hr id = "separate" > </hr>
+
+            <div class = item>
+
+            <img class = "cartImg" src="source/bun.svg" alt="product picture in cart">
+            <h3 class = 'itemHeading'>Walnut</h3>
+            <p class ='details'>Topping: Vanilla Glaze <br> </br>Amount: 3 buns <br> </br> Price: $12.00 </p>
+            <p class = 'remove'>Remove</p>
+            </div>
+
+            <button class = "checkout" type="submit" value="Submit">Checkout</button>
+
+    
         
-        Details: <span id = "result"></span>
+        <!-- Details: <span id = "result"></span>
         <script>
             for(let i=0; i<10; i++){
             console.log(document.getElementById("result").innerHTML = localStorage.getItem("glazeValue") + localStorage.getItem("amountValue"));
             }
-        </script>
+        </script> -->
     
 
 
