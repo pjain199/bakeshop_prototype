@@ -297,10 +297,11 @@ background-image: url("source/shop_flavors_button.svg");
 
 h1{
   position: relative;
-  width: 280px;
+  width: 470px;
   height: 70px;
-  left: 49px;
+  left: 40px;
   top: 50px;
+  
 
   font-family: Reenie Beanie;
   font-style: normal;

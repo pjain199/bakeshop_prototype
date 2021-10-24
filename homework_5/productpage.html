@@ -21,7 +21,7 @@
                 <div class="home">
                     <a href="index.html">Bun Bun <br/> </br> Bake Shop</a>
                 </div>
-                <div class = "cart" onclick: openCart()></div>
+                <div class = "cart"></div>
                 <span class="counter-display">(0)</span>
 
                 <hr>
@@ -38,7 +38,7 @@
                 <div class = "container">
                     <div class ="box">
                         
-                        <img id="originalFlavor" src="source/bun.svg" alt="pic" onclick="openModal()">
+                        <img id="originalFlavor" src="source/bun.svg" alt="pic" onclick="openModal({name:'Original'})">
                         
                     </div>
                     <div class = "flavor">
@@ -48,7 +48,7 @@
 
                 <div class = "container">
                     <div class ="box">
-                        <img id = "blackberryFlavor" src="source/bun.svg" alt="pic" onclick="openModal()">
+                        <img id = "blackberryFlavor" src="source/bun.svg" alt="pic" onclick="openModal({name:'Blackberry'})">
                     </div>
                     <div class = "flavor">
                         <a id="blackberry" href=" ">Blackberry</a>
@@ -57,7 +57,7 @@
 
                 <div class = "container">
                     <div class ="box">
-                        <img src="source/bun.svg" alt="pic" onclick="openModal()">
+                        <img src="source/bun.svg" alt="pic" onclick="openModal({name:'Walnut'})">
                     </div>
                     <div class = "flavor">
                         <a id = "walnut" href=" ">Walnut</a>
@@ -67,8 +67,7 @@
                 <!-- box2 means boxes on the second row of flex container -->
                 <div class = "container">
                     <div class ="box2">
-                        <a href=" ">
-                        <img src="source/bun.svg" alt="pic">
+                        <img src="source/bun.svg" alt="pic" onclick = "openModal({name:'Original(Gluten-free)'})">
                     </a>
                     </div>
                     <div class = "flavor">
@@ -78,8 +77,7 @@
 
                 <div class = "container">
                     <div class ="box2">
-                        <a href=" ">
-                        <img src="source/bun.svg" alt="pic">
+                        <img src="source/bun.svg" alt="pic" onclick = "openModal({name: 'Pumpkin Spice'})">
                     </a>
                     </div>
                     <div class = "flavor">
@@ -89,8 +87,7 @@
 
                 <div class = "container">
                     <div class ="box2">
-                        <a href=" ">
-                        <img src="source/bun.svg" alt="pic">
+                        <img src="source/bun.svg" alt="pic" onclick = "openModal({name: 'Caramel Pecan'})">
                     </a>
                     </div>
                     <div class = "flavor">
@@ -108,7 +105,7 @@
             <div id="productDetailsModal" class="modal">
                 <div class="modal-content">
                     <span class="closeBtn" onclick="closeModal()">&times;</span>
-                    <h1>Original</h1>
+                    <h1 id = "productName">Original</h1>
                     <div class = "productImage">
                     <img src="source/bun.svg" id= "originalPic" alt="original bun pic">
                     <p class = "ingredients">

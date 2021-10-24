@@ -133,9 +133,21 @@ var closeBtn = document.getElementsByClassName('closeBtn')[0];
 
 // closeBtn.addEventListener('click', closeModal);
 
+// var cartInfo = [];
 
-function openModal(){
+// const cartItem = {
+//   name = document.getElementById('productName').innerHTML,
+//   glaze = document.getElementById("glaze").value,
+//   amount = document.getElementById("buns").value
+// };
+
+// const item = Object.create(cartItem);
+// cartInfo.push(item);
+// console.log(cartInfo);
+
+function openModal(productProperties){
   var modal = document.getElementById('productDetailsModal');
+  document.getElementById('productName').innerHTML = productProperties.name;
   modal.style.display='block';
 
 }
@@ -145,6 +157,19 @@ function closeModal(){
   modal.style.display='none';
 
 }
+
+// var cartInfo = [];
+
+// const cartItem = {
+//   name = document.getElementById('productName').innerHTML,
+//   glaze = document.getElementById("glaze").value,
+//   amount = document.getElementById("buns").value
+// };
+
+// const item = Object.create(cartItem);
+// cartInfo.push(item);
+// console.log(cartInfo);
+
 let counterDisplay = document.querySelector('.counter-display');
 let counterAdd = document.querySelector('addCart');
 
@@ -164,9 +189,6 @@ updateDisplay();
 };
 
 
-openCart(){
-  
-}
 // function bunSelection(name, glaze, amount) {
 //   this.name = name;
 //   this.glaze = glaze;
