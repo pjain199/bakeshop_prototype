@@ -109,11 +109,11 @@ hr {
 .site-header > .cart {
   /* position: relative;
   display: inline-block; */
-  left:500px;
+  left:-100px;
   width: 79px;
   height: 54px;
   margin-top: 10px;
-  margin-right: 20px;
+  margin-right: 50px;
   background-image: url("source/cartpic.svg");
   z-index:200;
 }
@@ -372,7 +372,8 @@ h1{
     width: 25px;
     height: 30px;
     margin-top: 6px;
-    margin-right: 30px;
+    margin-right: 0px;
+    margin-left:600px;
     background-color: red;
     z-index:300;
   }

@@ -157,40 +157,43 @@ function closeModal(){
   modal.style.display='none';
 
 }
-
-
-var cartInfo = [];
-const cartItem = {
-  // flavor = document.getElementById('productName').innerHTML,
-  // glaze = document.getElementById("glaze").value,
-  // amount = document.getElementById("buns").value
-};
-
-// console.log(cartItem);
-
-function addToCart(){
-const item = Object.create(cartItem);
-cartInfo.push(item);
-console.log(cartInfo);
+let count = 0;
+function increaseCounter(){
+  count++;
+  document.getElementById('counter-display').innerHTML = count;
 }
 
-let counterDisplay = document.querySelector('.counter-display');
-let counterAdd = document.querySelector('addCart');
 
-let count = 0;
+// var cartInfo = [];
+// const cartItem = {
+//   // flavor = document.getElementById('productName').innerHTML,
+//   // glaze = document.getElementById("glaze").value,
+//   // amount = document.getElementById("buns").value
+// };
 
-updateDisplay();
+// // console.log(cartItem);
+
+// function addToCart(){
+// const item = Object.create(cartItem);
+// cartInfo.push(item);
+// console.log(cartInfo);
+// }
+// var count = 0;
+
+// let counterDisplay = document.getElementById('.counter-display');
+// let counterAdd = document.getElementById('add-to-cart');
 
 
-  counterAdd.addEventListener("click",()=>{
-    counter++;
-    updateDisplay();
+// updateDisplay(count);
 
-  });
+//   counterAdd.addEventListener("click",()=>{
+//     count++;
+//     updateDisplay(count);
 
-  function updateDisplay(){
-    counterDisplay.innerHTML = count;
-};
+//   });
+//   function updateDisplay(count){
+//     counterDisplay.innerHTML = count;
+// };
 
 
 // function bunSelection(name, glaze, amount) {
