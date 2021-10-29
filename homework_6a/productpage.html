@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="style.css">
         <link href='https://fonts.googleapis.com/css?family=Reenie Beanie' rel='stylesheet'>   
         <script src="site.js"></script>
-        <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
 
     </head>
 
@@ -24,7 +23,7 @@
                     <a href="index.html">Bun Bun <br/> </br> Bake Shop</a>
                 </div>
                 <div class = "cart" onclick ="location.href='cart.html';">
-                    <span id="counter-display">(0)</span>
+                    <span id="counter-display"></span>
 
                 </div>
                 <!-- <span id="counter-display">(0)</span> -->
@@ -142,7 +141,7 @@
                             </div>
 
                             <div class="add-to-cart">
-                                <button class = "addCart" type="submit" value="Submit" onclick = "increaseCounter()">Add To Cart</button>
+                                <button class = "addCart" type="submit" value="Submit" onclick = "addToCart()">Add To Cart</button>
 
     
                             </div>

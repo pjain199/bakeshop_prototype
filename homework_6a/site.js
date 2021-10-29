@@ -157,43 +157,64 @@ function closeModal(){
   modal.style.display='none';
 
 }
-let count = 0;
-function increaseCounter(){
-  count++;
-  document.getElementById('counter-display').innerHTML = count;
+
+//confused with saving cart number to next page
+// let count = 0;
+
+function Load(){
+let cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
+document.getElementById('counter-display').innerHTML = cartInfo.length;
+
+
+}
+
+function increaseCounter(counter){
+  counter++;
+  localStorage.setItem("cartCount", counter);
+  document.getElementById('counter-display').innerHTML = counter;
 }
 
 
-// var cartInfo = [];
-// const cartItem = {
-//   // flavor = document.getElementById('productName').innerHTML,
-//   // glaze = document.getElementById("glaze").value,
-//   // amount = document.getElementById("buns").value
-// };
-
-// // console.log(cartItem);
-
-// function addToCart(){
-// const item = Object.create(cartItem);
-// cartInfo.push(item);
-// console.log(cartInfo);
-// }
-// var count = 0;
-
-// let counterDisplay = document.getElementById('.counter-display');
-// let counterAdd = document.getElementById('add-to-cart');
 
 
-// updateDisplay(count);
+// console.log(cartItem);
 
-//   counterAdd.addEventListener("click",()=>{
-//     count++;
-//     updateDisplay(count);
+function addToCart(){
+  let cartInfo = [];
+  if(localStorage.getItem("cartInfo") === null){
+    cartInfo = [];
+  }
+  else{
+    cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
+  }
+  const cartItem = {
+    flavor : document.getElementById('productName').innerHTML,
+    glaze : document.getElementById("glaze").value,
+    amount : document.getElementById("buns").value
+  };
+  const item = Object.create(cartItem);
+  cartInfo.push(cartItem);
+  console.log(cartInfo);
 
-//   });
-//   function updateDisplay(count){
-//     counterDisplay.innerHTML = count;
-// };
+  localStorage.setItem("cartInfo", JSON.stringify(cartInfo));
+  document.getElementById('counter-display').innerHTML = cartInfo.length;
+
+
+}
+
+// localStorage.setItem("myItem", JSON.stringify(cartItem));
+
+JSON.parse(localStorage.getItem("cartInfo")); //where does this go?
+
+
+
+
+
+
+
+
+
+
 
 
 // function bunSelection(name, glaze, amount) {
@@ -333,125 +354,3 @@ function increaseCounter(){
 //     }
 //     return cartCopy;
 //   }
-
-//   // cart : Array
-//   // Item : Object/Class
-//   // addItemToCart : Function
-//   // removeItemFromCart : Function
-//   // removeItemFromCartAll : Function
-//   // clearCart : Function
-//   // countCart : Function
-//   // totalCart : Function
-//   // listCart : Function
-//   // saveCart : Function
-//   // loadCart : Function
-//   return obj;
-// })();
-
-
-// // *****************************************
-// // Triggers / Events
-// // ***************************************** 
-// // Add item
-// $('.submit').click(function(event) {
-//   event.preventDefault();
-//   var name = $(this).data('name');
-//   var glaze = $(this).data('glaze');
-//   var amount = $(this).data('amount');
-//   shoppingCart.addItemToCart(name, glaze, amount, 1);
-//   displayCart();
-// });
-
-// // Clear items
-// // $('.clear-cart').click(function() {
-// //   shoppingCart.clearCart();
-// //   displayCart();
-// // });
-
-
-// function displayCart() {
-//   var cartArray = shoppingCart.listCart();
-//   var output = "";
-//   for(var i in cartArray) {
-//     output += "<tr>"
-//       + "<td>" + cartArray[i].name + "</td>" 
-//       + "<td>(" + cartArray[i].price + ")</td>"
-//       + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
-//       + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
-//       + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
-//       + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
-//       + " = " 
-//       + "<td>" + cartArray[i].total + "</td>" 
-//       +  "</tr>";
-//   }
-//   $('.show-cart').html(output);
-//   $('.total-cart').html(shoppingCart.totalCart());
-//   $('.total-count').html(shoppingCart.totalCount());
-// }
-
-// // Delete item button
-
-// $('.show-cart').on("click", ".delete-item", function(event) {
-//   var name = $(this).data('name')
-//   shoppingCart.removeItemFromCartAll(name);
-//   displayCart();
-// })
-
-
-// // -1
-// $('.show-cart').on("click", ".minus-item", function(event) {
-//   var name = $(this).data('name')
-//   shoppingCart.removeItemFromCart(name);
-//   displayCart();
-// })
-// // +1
-// $('.show-cart').on("click", ".plus-item", function(event) {
-//   var name = $(this).data('name')
-//   shoppingCart.addItemToCart(name);
-//   displayCart();
-// })
-
-// // Item count input
-// $('.show-cart').on("change", ".item-count", function(event) {
-//    var name = $(this).data('name');
-//    var count = Number($(this).val());
-//   shoppingCart.setCountForItem(name, count);
-//   displayCart();
-// });
-
-// displayCart();
-
- 
-// cart notification thing
-// export default function App() {
-//   const [itemCount, setItemCount] = React.useState(1);
-  
-//   return (
-//     <div style={{ display: "block", padding: 30 }}>
-// =      <div>
-//         <Badge color="secondary" badgeContent={itemCount}>
-//           <ShoppingCartIcon />{" "}
-//         </Badge>
-//         <ButtonGroup>
-//           <add-to-cart
-//             onClick={() => {
-//               setItemCount(Math.max(itemCount - 1, 0));
-//             }}
-//           >
-//             {" "}
-//             <RemoveIcon fontSize="small" />
-//           </add-to-cart>
-//           <Button
-//             onClick={() => {
-//               setItemCount(itemCount + 1);
-//             }}
-//           >
-//             {" "}
-//             <AddIcon fontSize="small" />
-//           </Button>
-//         </ButtonGroup>
-//       </div>
-//       console.log(done);
-//     </div>
-//   );
-// }
