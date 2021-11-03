@@ -161,8 +161,45 @@ function closeModal(){
 //confused with saving cart number to next page
 // let count = 0;
 
+
+// <div class = item>
+// <img class = "cartImg" src="source/bun.svg" alt="product picture in cart">
+// <h3 class = 'itemHeading'>Original</h3>
+// <p class = 'details'>Topping: Vanilla Glaze <br> </br>Amount: 3 buns <br> </br> Price: $15.00 </p>
+// <p class = 'remove'>Remove</p>
+// </div>
+
 function Load(){
 let cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
+console.log("cartInfo in Load " + JSON.stringify(cartInfo))
+
+for (var i = 0; i < cartInfo.length; i++) {
+  var cartInfoItem = cartInfo[i]
+  var cartInfoItemDiv = document.createElement("div")
+  cartInfoItemDiv.classList.add("item")
+  var cartInfoItemImage = document.createElement("img")
+  cartInfoItemImage.src = "source/bun.svg"
+  cartInfoItemImage.classList.add("cartImg")
+// figure out how to add alt text attribute
+  var cartInfoItemTitle = document.createElement("h3")
+  cartInfoItemTitle.classList.add("itemHeading")
+  cartInfoItemTitle.innerText = cartInfoItem["flavor"]
+  var cartInfoItemTopping = document.createElement("p")
+  cartInfoItemTopping.classList.add("details")
+  cartInfoItemTopping.innerHTML = "Topping: " + cartInfoItem["glaze"] + "<br> </br>Amount: " + cartInfoItem["amount"] + "<br></br>Price: $15.00"
+  var cartInfoItemRemove = document.createElement("p")
+  cartInfoItemRemove.classList.add("remove")
+  cartInfoItemRemove.innerText = "Remove"
+  cartInfoItemDiv.appendChild(cartInfoItemImage)
+  cartInfoItemDiv.appendChild(cartInfoItemTitle)
+  cartInfoItemDiv.appendChild(cartInfoItemTopping)
+  cartInfoItemDiv.appendChild(cartInfoItemRemove)
+
+  var attachmentNode = document.getElementById("cart-items")
+  attachmentNode.appendChild(cartInfoItemDiv)
+  // attachmentNode.appendChild()
+}
+
 document.getElementById('counter-display').innerHTML = cartInfo.length;
 
 
@@ -199,12 +236,27 @@ function addToCart(){
   localStorage.setItem("cartInfo", JSON.stringify(cartInfo));
   document.getElementById('counter-display').innerHTML = cartInfo.length;
 
-
 }
+  //is this right? for loop maybe?
+  // for every item in Array
+  // print onto cart page
+  // onclick remove function (remove by id or index?)
+
+  // document.getElementById('cart-array').innerHTML = cartInfo;
+
+//   for (var i = 0; i < cartInfo.length; i++) {
+//     var added = cartInfo[i];
+//     var itemNode = document.createElement("li");
+//     itemNode.innerText = added.flavor + added.glaze + " (" + added.amount + ")";
+// }
+
 
 // localStorage.setItem("myItem", JSON.stringify(cartItem));
 
 JSON.parse(localStorage.getItem("cartInfo")); //where does this go?
+
+
+
 
 
 
