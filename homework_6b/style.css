@@ -1,0 +1,611 @@
+/* reset default never use*/
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.site-header{
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+    margin-top:0px;
+    height:80px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    /* makes header sticky so it doesn't move up */
+    position: sticky; 
+    top: 0px;
+    z-index:5000;
+} 
+
+
+/* changes position of navigation bar*/
+
+
+/* for modal stuffs */
+body{
+  font-family:'Montserrat', sans-serif, 'regular';
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* changes position of cart */
+.site-header > .cart{
+  width: 70px;
+  height: 50px;
+  display:flex;
+  top:15px;
+  /* display: block;
+  position: absolute;
+  margin-left: 850px;
+  margin-top: -20px; */
+}
+
+/* Bun Bun Bake Shop home logo */
+.home > a{
+
+  position: absolute;
+  width: 219px;
+  height: 66px;
+  left: 610px;
+  top: 24px;
+
+  font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 15px;
+  text-align: center;
+  z-index: 300;
+
+  color: #A04057;
+  text-decoration: none;
+
+}
+
+
+hr {
+  position: absolute;
+  width: 1440px;
+  height: 0px;
+  left: 0px;
+  top: 80px;
+  border: 1px solid #000000;
+  z-index: 200;
+}
+
+
+
+
+.site-header > .nav > a {
+  display: inline-block;
+  padding: 15px;
+  margin-top:10px;
+  top:30px;
+}
+/* changes properties of entire navigation bar */
+/* .header > .nav {
+  display: inline-block;
+  width: 100%;
+  background-color: #FFFFFF;
+  position: absolute;
+  top:-26px;
+  right: 0px;
+  z-index: 200;
+} */
+
+
+/* highlight top-menu item when mouse is over it */
+.site-header  > .nav > a:hover {
+  font-weight: 800;
+}
+
+/* .header > .nav > li > #cart:hover{
+    background-image: "/Users/priyajain/Documents/MHCI/bakeshop_prototype/source/carticonhover.svg";
+} */
+
+.site-header > .cart {
+  /* position: relative;
+  display: inline-block; */
+  left:-100px;
+  width: 79px;
+  height: 54px;
+  margin-top: 10px;
+  margin-right: 50px;
+  background-image: url("source/cartpic.svg");
+  z-index:200;
+}
+
+.site-header > .cart:hover {
+  width: 76px;
+  background-image: url("source/carticonhover.svg");
+}
+
+/* Do I want the home logo to bold on hover? */
+/* .home > a:hover {
+    font-weight: 700;
+} */
+
+
+
+/* set font and text style of main and sub-menu links */
+.site-header  > .nav > a {
+  color: #AA0E47;
+  font-family: 'Montserrat', sans-serif, 'regular';
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 110%
+}
+
+
+
+/* add code for samller screen */
+@media (max-width: 700px) {
+  /* move dropdown menu back as part of the navigation   */
+  .site-header > .nav {
+    position: static;
+    width: 100%;
+    padding: 0px;
+    background-color: white;
+  }
+
+  .header > .nav > li {
+    display: block;
+    padding: 0px;
+border: 1px solid white;
+border-width: 1px 0px 0px 0px;
+  color: grey;
+  }
+
+
+  .header > .nav > li > a {
+    display: block;
+    padding: 16px;
+    font-family: sans-serif;
+    text-decoration: none;
+     text-transform: uppercase;
+  }
+
+
+    
+
+}
+
+/*------ Slideshow ------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slideshow {
+  display: block;
+  /* width: 100%;
+  height: 650px;
+  position: relative;
+  top: -100px;
+  margin-bottom:-100px; */
+  overflow: hidden;
+  position: absolute;
+  width: 1440px;
+  height: 710px;
+  left: 0px;
+  top: 80px; 
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.slide {
+  /* display: none;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0px 0px 0px;
+  overflow: hidden; */
+  display:none;
+  position: absolute;
+  width: 1440px;
+  height: 710px;
+  left: 0px;
+  top: 0px; 
+  overflow: hidden;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}   
+
+.slideshow > input {
+display: none;
+}
+
+.slideshow > input:checked + label + .slide {
+/* only show slide if the radio button in front of it is checked */
+  display: block;
+}
+
+.slideshow > label {
+/* labels will be side by side and share the row   */
+display: inline-block;
+  width: 8px;
+  height: 8px;
+  
+position: absolute;
+bottom: 45px;
+  z-index: 100;
+/* button color */
+  background-color: lightgrey;
+}
+
+/* highlight checked button */
+.slideshow > input:checked + label {
+  background-color: white;
+}
+
+/* set differnt left: value to make labels position horizontally */
+.slideshow > label:nth-of-type(1) {
+  left: 60px;
+}
+.slideshow > label:nth-of-type(2) {
+left:40px
+}
+
+.slide video, .slide img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  opacity: 90%;
+  
+}
+
+/* make the link as a square box */
+.slide > a {
+display: block;
+width: 104px;
+height: 104px;
+padding: 14px;
+ border: 5px solid white;
+  position: absolute;
+  bottom: 220px;
+  left: 60px;
+
+  color: white;
+  font-family: sans-serif;
+  font-size: 120%;
+  text-decoration: none;
+}
+
+
+
+.shopFlavorsButton{
+position: absolute;
+width: 250px;
+height: 80px;
+left: 590px;
+top: 590px;
+background-image: url("source/shop_flavors_button.svg");
+}
+
+.shopFlavorsButton:hover{
+  background-image: url("source/shop_flavors_button_hover.svg");
+}
+
+
+
+
+/* Product Page  */
+
+h1{
+  position: relative;
+  width: 470px;
+  height: 70px;
+  left: 40px;
+  top: 50px;
+  
+
+  font-family: Reenie Beanie;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 70px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #A04057;
+}
+
+.flex-container {
+  margin: 40px auto 0 auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  
+}
+
+.box, .box2 {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 40px auto 0 auto;
+  color: white;
+  background-color: white;
+  width: 400px;
+  margin: 30px;
+  height: 240px;
+  text-align: center;
+  line-height: 140px;
+  font-size: 20px;
+}
+
+.box2{
+    margin-top: 70px;
+}
+
+
+
+.flavor{
+    text-align: center; 
+    margin-top: -40px;;
+}
+
+
+.flavor > a{
+  font-family: Reenie Beanie;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+
+  color: #FB8B8B;
+}
+
+
+.counter-display{
+   position:absolute;
+    left:1390px;
+    width: 25px;
+    height: 30px;
+    margin-top: 6px;
+    margin-right: 0px;
+    margin-left:600px;
+    background-color: red;
+    z-index:300;
+  }
+
+
+
+/* modal css gray background */
+.modal{
+  display:none; 
+  position:absolute;
+  z-index:1;
+  left:0;
+  bottom:0;
+  height:90%;
+  width:100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+  background-color: #FFFFFF;
+  margin: 50%;
+  margin-top: 0px;
+  margin-right:0px;
+  padding:20px;
+  height:100%;
+  /* credit to w2schools */
+  max-height: calc(vh - 300px); 
+
+  overflow-y: auto;
+
+}
+
+.closeBtn{
+  color: #ccc;
+  float: right;
+  font-size:40px;
+}
+
+.closeBtn:hover, .closeBtn:focus{
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.modal-content > h1{
+  margin-top:-40px;
+  margin-left:-50px;
+}
+
+.ingredients{
+  margin-top:-55px;
+  margin-left:200px;
+  line-height: 12px;
+  font-family:'Montserrat', sans-serif, 'regular';
+
+}
+
+#originalPic{
+  margin-left:200px;
+  margin-top:60px;
+}
+
+
+/* dropdown */
+.selectbox-container {
+  left: 0px;
+  top: 0px;
+  width: 300px;
+  text-align: right;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 40px 10px;
+}
+.selectbox-container label {
+  float: left;
+  line-height: 40px;
+  height: 40px;
+  margin: 1px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif, 'regular';
+}
+
+.customize-details {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif, 'regular';
+  width: 200px;
+  padding: 8px 20px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 2px solid #FF8282;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.number-of-buns{
+  margin-top:60px;
+}
+
+.subtotal{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 37px;
+color:black;
+margin-left:10px;
+margin-bottom:-60px;
+}
+
+.add-to-cart button{
+  margin-left:400px;
+  background-color: #A04057;
+  width: 242px;
+  height: 74.21px;
+  font-family: 'Montserrat', sans-serif, 'regular';
+font-style:normal;
+color:#FFFFFF;
+font-weight: 400;
+font-size: 26px;
+line-height: 32px;
+text-align: center;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
+  
+}
+
+.add-to-cart button:hover{
+  background-color: #FB8B8B ;
+}
+
+.productImage > img{
+  width:300px;
+  height: 300px;
+}
+
+#productPic{
+  margin-left:30px;
+  margin-top:60px;
+}
+
+/* about page */
+.our-story{
+  margin-top:-55px;
+  margin-left:200px;
+  line-height: 24px;
+  font-family:'Montserrat', sans-serif, 'regular';
+  font-size: 20px;
+  letter-spacing: 0.015em;
+  margin-top: 100px;
+  margin-left:90px;
+
+}
+
+#person1, #person2, #person3{
+  width:200px;
+  height:300px;
+}
+
+.name{
+  font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 30px;
+  color:#FB8B8B;
+  text-align: center;
+  margin-top:90px;
+}
+
+/* Cart Page */
+.cartImg{
+  margin-top: 60px;
+  height:200px;
+  width:200px;
+}
+
+.itemHeading{
+  margin-top:-200px;
+  margin-left:300px;
+}
+
+.details{
+  margin-left: 300px;
+  line-height: 15px;
+  font-size: 15px;
+}
+
+.remove{
+  margin-left: 1000px;
+  margin-top:-10px;
+  color:#FB8B8B;
+
+  
+}
+
+.item{
+  border-bottom: #000000;
+  border-width: 2px;
+}
+
+#separate{
+  position: absolute;
+  width: 1440px;
+  height: 0px;
+  left: 0px;
+  margin-top: 300px;
+  border: 1px solid #000000;
+  z-index: 200;
+}
+
+.checkout{
+  margin-left:900px;
+  margin-top:40px;
+  background-color: #A04057;
+  width: 242px;
+  height: 74.21px;
+  font-family: 'Montserrat', sans-serif, 'regular';
+font-style:normal;
+color:#FFFFFF;
+font-weight: 400;
+font-size: 26px;
+line-height: 32px;
+text-align: center;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
+}
+
+button:hover{
+  background-color: #FB8B8B ;
+}

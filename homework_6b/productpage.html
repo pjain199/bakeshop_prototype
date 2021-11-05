@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bun Bun Bake Shop</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Reenie Beanie' rel='stylesheet'>   
+        <script src="site.js"></script>
+
+    </head>
+
+    <body>
+        <header class="site-header">
+                <nav class="nav">
+                    <a href="about.html">About</a>
+                    <a href=" ">Contact</a>
+                    <a href=" ">Location</a>
+                    <a href=" ">Products</a>
+                </nav>
+                <div class="home">
+                    <a href="index.html">Bun Bun <br/> </br> Bake Shop</a>
+                </div>
+                <div class = "cart" onclick ="location.href='cart.html';">
+                    <span id="counter-display"></span>
+
+                </div>
+                <!-- <span id="counter-display">(0)</span> -->
+
+
+
+                <hr>
+        </header>
+    
+
+
+
+            
+ 
+<div class="content">
+    <h1>Products</h1>
+            <div class = "flex-container">
+                <div class = "container">
+                    <div class ="box">
+                        
+                        <img id="originalFlavor" src="source/bun.svg" alt="pic" onclick="openModal({name:'Original'})">
+                        
+                    </div>
+                    <div class = "flavor">
+                        <a id= "original" href=" ">Original</a>
+                    </div>
+                </div>
+
+                <div class = "container">
+                    <div class ="box">
+                        <img id = "blackberryFlavor" src="source/bun.svg" alt="pic" onclick="openModal({name:'Blackberry'})">
+                    </div>
+                    <div class = "flavor">
+                        <a id="blackberry" href=" ">Blackberry</a>
+                    </div>
+                </div>
+
+                <div class = "container">
+                    <div class ="box">
+                        <img src="source/bun.svg" alt="pic" onclick="openModal({name:'Walnut'})">
+                    </div>
+                    <div class = "flavor">
+                        <a id = "walnut" href=" ">Walnut</a>
+                    </div>
+                </div>
+
+                <!-- box2 means boxes on the second row of flex container -->
+                <div class = "container">
+                    <div class ="box2">
+                        <img src="source/bun.svg" alt="pic" onclick = "openModal({name:'Original(Gluten-free)'})">
+                    </a>
+                    </div>
+                    <div class = "flavor">
+                        <a href=" ">Original (Gluten-free)</a>
+                    </div>
+                </div>
+
+                <div class = "container">
+                    <div class ="box2">
+                        <img src="source/bun.svg" alt="pic" onclick = "openModal({name: 'Pumpkin Spice'})">
+                    </a>
+                    </div>
+                    <div class = "flavor">
+                        <a href=" ">Pumpkin Spice</a>
+                    </div>
+                </div>
+
+                <div class = "container">
+                    <div class ="box2">
+                        <img src="source/bun.svg" alt="pic" onclick = "openModal({name: 'Caramel Pecan'})">
+                    </a>
+                    </div>
+                    <div class = "flavor">
+                        <a href=" ">Caramel Pecan</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+            <!-- modal Product Details Screen -->
+
+            <div id="productDetailsModal" class="modal">
+                <div class="modal-content">
+                    <span class="closeBtn" onclick="closeModal()">&times;</span>
+                    <h1 id = "productName">Original</h1>
+                    <div class = "productImage">
+                    <img src="source/bun.svg" id= "originalPic" alt="original bun pic">
+                    <p class = "ingredients">
+                        Ingredients: Flour, milk, sugar, heavy cream, <br></br> cinnamon, maple syrup, baking soda, salt
+                    </p>
+                </div>
+
+                <!-- glaze drop down -->
+                        <div class="selectbox-container">
+                            <div class = "glazing">
+                            <label for="glaze">Glaze</label>
+                            <select id="glaze" class="customize-details" name="glaze">
+                                <option value="none">None</option>
+                                <option value="sugarMilk">Sugar-milk</option>
+                                <option value="vanillaMilk">Vanilla-milk</option>
+                                <option value="doubleChocolate">Double-chocolate</option>
+                            </select>
+                            <div class="number-of-buns">
+
+                                <label for="amount">Amount</label>
+                                <select id="buns" class="customize-details" name="buns">
+                                    <option value="1 roll">1 roll</option>
+                                    <option value="3 rolls">3 rolls</option>
+                                    <option value="6 rolls">6 rolls</option>
+                                    <option value="12 rolls">12 rolls</option>
+                                </select>
+                            </div>
+
+                            <div class="add-to-cart">
+                                <button class = "addCart" type="submit" value="Submit" onclick = "addToCart()">Add To Cart</button>
+
+    
+                            </div>
+                        </div>
+
+                        <!-- <div class="number-of-buns">
+
+                            <label for="amount">Amount</label>
+                            <select id="buns" class="customize-details" name="buns">
+                                <option value="1 roll">1 roll</option>
+                                <option value="3 rolls">3 rolls</option>
+                                <option value="6 rolls">6 rolls</option>
+                                <option value="12 rolls">12 rolls</option>
+                            </select>
+                        </div> -->
+                        </div>
+
+                        <p class="subtotal">Subtotal:$15.00</p>
+
+                        <!-- add to cart button -->
+                        <!-- <div class="add-to-cart">
+                            <button type="submit" value="Submit" onclick="passValue()">Add To Cart</button>
+
+                        </div> -->
+
+                    
+
+
+                    </div>
+
+            </div>
+
+
+
+<!-- This is the cart modal page  -->
+            <!-- <div id="cartModal" class="modal">
+                <div class="modal-content">
+                    <span class="closeBtn" onclick="closeModal()">&times;</span>
+                    <h1>My Cart</h1>
+                    <div class = "productImage">
+                    <img src="source/bun.svg" id= "productPic" alt="product picture on cart page">
+                </div>
+
+                    <h3 class="productName">Original</h3>
+                        <p class="cartDetails">Topping: Vanilla Glaze <br> </br> Quantity: 3 Buns</p>
+                        <p class="productTotal">$15.00</p>
+                        <p class = "removeFromCart">Remove</p>
+
+
+
+                        add to cart button -->
+                        <!-- <div class="checkoutButton">
+                            <button type="checkout">Checkout</button>
+                        </div> -->
+
+                    
+<!-- 
+
+                    </div>
+
+            </div> -->
+
+            
+
+
+          
+    </body>
+
+    <script src="site.js"></script>
+    <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+
+</html>

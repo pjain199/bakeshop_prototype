@@ -171,7 +171,7 @@ function closeModal(){
 
 function Load(){
 let cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
-console.log("cartInfo in Load " + JSON.stringify(cartInfo))
+// console.log("cartInfo in Load " + JSON.stringify(cartInfo))
 
 for (var i = 0; i < cartInfo.length; i++) {
   var cartInfoItem = cartInfo[i]
@@ -190,10 +190,12 @@ for (var i = 0; i < cartInfo.length; i++) {
   var cartInfoItemRemove = document.createElement("p")
   cartInfoItemRemove.classList.add("remove")
   cartInfoItemRemove.innerText = "Remove"
+
   cartInfoItemDiv.appendChild(cartInfoItemImage)
   cartInfoItemDiv.appendChild(cartInfoItemTitle)
   cartInfoItemDiv.appendChild(cartInfoItemTopping)
   cartInfoItemDiv.appendChild(cartInfoItemRemove)
+  
 
   var attachmentNode = document.getElementById("cart-items")
   attachmentNode.appendChild(cartInfoItemDiv)
