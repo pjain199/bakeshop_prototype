@@ -199,8 +199,20 @@ for (var i = 0; i < cartInfo.length; i++) {
 
   var attachmentNode = document.getElementById("cart-items")
   attachmentNode.appendChild(cartInfoItemDiv)
+
+  cartInfoItemRemove.onclick = (function (cartInfoItem) {
+    return function() {
+      removeItem(cartInfoItem)
+      console.log(cartInfo);
+    }
+   }(cartInfoItem))
+
+
+  //click on remove text to remove object in array
+ 
   // attachmentNode.appendChild()
 }
+
 
 document.getElementById('counter-display').innerHTML = cartInfo.length;
 
@@ -211,6 +223,29 @@ function increaseCounter(counter){
   counter++;
   localStorage.setItem("cartCount", counter);
   document.getElementById('counter-display').innerHTML = counter;
+}
+
+//removes item
+function removeItem(obj) {
+  // retrieve the stored value of the cart items so that we can modify it
+  var cartItemsString = localStorage.getItem("cartInfo")
+  if (cartItemsString !== null) {
+    var cartInfo = JSON.parse(cartItemsString) // successfully loaded in the cart items
+    
+    // find the index of the input object in the list
+    var ind = cartInfo.findIndex(function (item) {
+      return obj.flavor === item.flavor && item.glaze === obj.glaze && item.amount === obj.amount
+    })
+    console.log("ind " + ind)
+    if (ind !== -1) {
+      // remove item from the list
+      cartInfo.splice(ind, 1)
+      // update the stored value
+      localStorage.setItem("cartInfo", JSON.stringify(cartInfo))
+      // re-render the page to reflect changes
+      // Load()
+    }
+  }
 }
 
 
@@ -261,150 +296,3 @@ JSON.parse(localStorage.getItem("cartInfo")); //where does this go?
 
 
 
-
-
-
-
-
-
-
-
-
-
-// function bunSelection(name, glaze, amount) {
-//   this.name = name;
-//   this.glaze = glaze;
-//   this.amount = amount;
-// }
-
-// var item1 = new bunSelection("CS1500", gradingareas, 85);
-
-// function getGlazeOption() {
-//   selectElement = document.querySelector('#glaze');  
-//   glazeOutput = selectElement.value;
-
-// }
-
-// function getAmountOption() {
-//   selectElement = document.querySelector('#buns');  
-//   amountOutput = selectElement.value;
-// }
-
-
-
-
-
-// var shoppingCart = (function() {
-
-//   cart = [];
-  
-//   // Constructor
-//   function Item(name, glaze, amount) {
-//     this.name = name;
-//     this.glaze = glaze;
-//     this.amount = amount;
-//   }
-
-//   var item1 = new Item("CS1500", (document.querySelector('#glaze')).value, (document.querySelector('#buns')));
-  
-//   // Save cart
-//   function saveCart() {
-//     sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
-//   }
-  
-//     // Load cart
-//   function loadCart() {
-//     cart = JSON.parse(sessionStorage.getItem('shoppingCart')); //parses JSON
-//   }
-//   if (sessionStorage.getItem("shoppingCart") != null) {
-//     loadCart();
-//   }
-  
-//   var obj = {};
-  
-//   // Add to cart
-//   obj.addItemToCart = function(name, glaze, amount, count) {
-//     for(var item in cart) {
-//       if(cart[item].name === name) {
-//         cart[item].count ++;
-//         saveCart();
-//         return;
-//       }
-//     }
-//     var item = new Item(name, glaze, amount, count);
-//     cart.push(item);
-//     saveCart();
-//   }
-//   // Set count from item
-//   obj.setCountForItem = function(name, count) {
-//     for(var i in cart) {
-//       if (cart[i].name === name) {
-//         cart[i].count = count;
-//         break;
-//       }
-//     }
-//   };
-//   // Remove item from cart
-//   obj.removeItemFromCart = function(name) {
-//       for(var item in cart) {
-//         if(cart[item].name === name) {
-//           cart[item].count --;
-//           if(cart[item].count === 0) {
-//             cart.splice(item, 1);
-//           }
-//           break;
-//         }
-//     }
-//     saveCart();
-//   }
-
-//   // Remove all items from cart
-//   obj.removeItemFromCartAll = function(name) {
-//     for(var item in cart) {
-//       if(cart[item].name === name) {
-//         cart.splice(item, 1);
-//         break;
-//       }
-//     }
-//     saveCart();
-//   }
-
-//   // Clear cart
-//   obj.clearCart = function() {
-//     cart = [];
-//     saveCart();
-//   }
-
-//   // Count cart 
-//   obj.totalCount = function() {
-//     var totalCount = 0;
-//     for(var item in cart) {
-//       totalCount += cart[item].count;
-//     }
-//     return totalCount;
-//   }
-
-//   // Total cart
-//   // obj.totalCart = function() {
-//   //   var totalCart = 0;
-//   //   for(var item in cart) {
-//   //     totalCart += cart[item].price * cart[item].count;
-//   //   }
-//   //   return Number(totalCart.toFixed(2));
-//   // }
-
-//   // List cart
-//   obj.listCart = function() {
-//     var cartCopy = [];
-//     for(i in cart) {
-//       item = cart[i];
-//       itemCopy = {};
-//       for(p in item) {
-//         itemCopy[p] = item[p];
-
-//       }
-//       itemCopy.total = Number(item.price * item.count).toFixed(2);
-//       cartCopy.push(itemCopy)
-//     }
-//     return cartCopy;
-//   }
