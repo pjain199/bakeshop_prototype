@@ -177,7 +177,7 @@ for (var i = 0; i < cartInfo.length; i++) {
   var cartInfoItem = cartInfo[i]
   var cartInfoItemDiv = document.createElement("div")
   document.getElementById('counter-display').innerHTML = cartInfo.length;
-  var cartNumber = document.getElementById('counter-display').innerHTML
+  // var cartNumber = document.getElementById('counter-display').innerHTML
   cartInfoItemDiv.classList.add("item")
   var cartInfoItemImage = document.createElement("img")
   cartInfoItemImage.src = "source/bun.svg"
@@ -203,18 +203,21 @@ for (var i = 0; i < cartInfo.length; i++) {
   attachmentNode.appendChild(cartInfoItemDiv)
 
 
-  cartInfoItemRemove.onclick = (function (cartInfoItem,cartInfoItemDiv, cartNumber) {
+  cartInfoItemRemove.onclick = (function (cartInfoItem,cartInfoItemDiv) {
     return function() {
       removeItem(cartInfoItem)
 
       cartInfoItemDiv.parentNode.removeChild(cartInfoItemDiv)
       // cartNumber = cartNumber - 1;
-      document.getElementById('counter-display').innerHTML = cartNumber-1;
+      // document.getElementById('counter-display').innerHTML = cartInfo.length;
 
       console.log(cartInfo);
-      console.log(cartNumber)
+      console.log(cartInfo.length)
+
     }
-   }(cartInfoItem, cartInfoItemDiv, cartNumber))
+    // document.getElementById('counter-display').innerHTML = cartInfo.length;
+
+   }(cartInfoItem, cartInfoItemDiv))
 
 
 
@@ -259,6 +262,8 @@ function removeItem(obj) {
       // Load()
     }
   }
+  document.getElementById('counter-display').innerHTML = cartInfo.length;
+
 }
 
 
