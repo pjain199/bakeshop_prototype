@@ -176,6 +176,8 @@ let cartInfo = JSON.parse(localStorage.getItem("cartInfo"));
 for (var i = 0; i < cartInfo.length; i++) {
   var cartInfoItem = cartInfo[i]
   var cartInfoItemDiv = document.createElement("div")
+  document.getElementById('counter-display').innerHTML = cartInfo.length;
+  var cartNumber = document.getElementById('counter-display').innerHTML
   cartInfoItemDiv.classList.add("item")
   var cartInfoItemImage = document.createElement("img")
   cartInfoItemImage.src = "source/bun.svg"
@@ -200,12 +202,23 @@ for (var i = 0; i < cartInfo.length; i++) {
   var attachmentNode = document.getElementById("cart-items")
   attachmentNode.appendChild(cartInfoItemDiv)
 
-  cartInfoItemRemove.onclick = (function (cartInfoItem) {
+
+  cartInfoItemRemove.onclick = (function (cartInfoItem,cartInfoItemDiv, cartNumber) {
     return function() {
       removeItem(cartInfoItem)
+
+      cartInfoItemDiv.parentNode.removeChild(cartInfoItemDiv)
+      // cartNumber = cartNumber - 1;
+      document.getElementById('counter-display').innerHTML = cartNumber-1;
+
       console.log(cartInfo);
+      console.log(cartNumber)
     }
-   }(cartInfoItem))
+   }(cartInfoItem, cartInfoItemDiv, cartNumber))
+
+
+
+
 
 
   //click on remove text to remove object in array
@@ -214,7 +227,7 @@ for (var i = 0; i < cartInfo.length; i++) {
 }
 
 
-document.getElementById('counter-display').innerHTML = cartInfo.length;
+// document.getElementById('counter-display').innerHTML = cartInfo.length;
 
 
 }
