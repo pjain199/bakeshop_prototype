@@ -1,8 +1,5 @@
 # bakeshop_prototype
 
-Assignment files:
-index.html,
-productPage.html (click on first flavor (original) for product details page),
-style.css,
-site.js,
-about.html (extra credit)
+https://pjain199.github.io/bakeshop_prototype/homework_6b/index.html
+
+Main files: Productpage.html, cart.html, site.js
